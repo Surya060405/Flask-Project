@@ -4,39 +4,43 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-  <style>
-    
-    h2{
-      font-family : Roboto;
-      text-align : center;
-    }
-    #banner {
-      object-fit : cover;
-    }
-    #container {
-      margin : 0 239px 0 239px ;
-    }
-    h1{
-      font-size: 57px ;
-      font-weight : bold;
-      font-family: Roboto ;
-      text-align: center ;
-    }
-  </style>
-   
+ <style>
+   #banner {
+     width : fill ;
+     height : 630px ;
+   }
+ </style>
 <body
-  <div id = "container">
-  <h1>Jovian Careers</h1>
-  <img id = "banner" src = "https://ddd453d1-7bff-4c03-9210-fece76aff9e2-00-3jxg2ypx8iryd.pike.replit.dev/static/career.jpg" height = "320" width = "100%" >
-  <h2>About Jovian</h2>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-<h2>Career Options</h2>
-<p>TODO : Show the jobs here</p>
-    <div style="text-align: center;">
-<button>Contact us</button>
+  <div class = "container">
+  <h1 class = "text-center">Jovian Careers</h1>
+  <img id = "banner"  class = "img-fluid" src = "https://ddd453d1-7bff-4c03-9210-fece76aff9e2-00-3jxg2ypx8iryd.pike.replit.dev/static/career.jpg" height = "320" width = "100%" >
+  <h2 class = "text-center">About Jovian</h2>
+    <div class = "border-bottom row" style = "margin-top : 16px ; margin-left : 10px ; paddin-bottom : 10px ;" >
+      
+       {% for job in jobs %}
+      <div class = "col-9">
+      <h4 style ="color:grey;"><b>Job: </b>{{job['title']}} </h4>
+     
+      <div><b>Location: </b>{{job['location']}}</div>
+
+         </div>
+      <div class = "col-3">
+         <button type="button" class="btn btn-outline-primary">Apply</button>
       </div>
+       {% endfor %}
+      
+    </div>
+      
+<h2 class = "text-center">Career Options</h2>
+<p class = "text-center">TODO : Show the jobs here</p>
+    <div class="d-grid gap-2 col-6 mx-auto">
+<button class="btn btn-primary">Contact us</button>
+    </div>
      </div>
 </body>
   
